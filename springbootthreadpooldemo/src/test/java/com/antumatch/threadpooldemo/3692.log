@@ -1,0 +1,112 @@
+2019-11-23 19:59:23
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.221-b11 mixed mode):
+
+"DestroyJavaVM" #13 prio=5 os_prio=0 tid=0x0000000002fe6000 nid=0x2544 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Thread-1" #12 prio=5 os_prio=0 tid=0x00000000198d5000 nid=0x2fe0 waiting for monitor entry [0x000000001a32e000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.antumatch.threadpooldemo.mytestdemo.DeadLockDemo$2.run(DeadLockDemo.java:34)
+	- waiting to lock <0x00000000d7577bf8> (a java.lang.String)
+	- locked <0x00000000d7577c28> (a java.lang.String)
+	at java.lang.Thread.run(Thread.java:748)
+
+"Thread-0" #11 prio=5 os_prio=0 tid=0x00000000198d3000 nid=0x410c waiting for monitor entry [0x000000001a22f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.antumatch.threadpooldemo.mytestdemo.DeadLockDemo$1.run(DeadLockDemo.java:20)
+	- waiting to lock <0x00000000d7577c28> (a java.lang.String)
+	- locked <0x00000000d7577bf8> (a java.lang.String)
+	at java.lang.Thread.run(Thread.java:748)
+
+"Service Thread" #10 daemon prio=9 os_prio=0 tid=0x0000000019101800 nid=0x24c0 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread2" #9 daemon prio=9 os_prio=2 tid=0x00000000190c9800 nid=0x3834 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #8 daemon prio=9 os_prio=2 tid=0x0000000019086000 nid=0x32fc waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #7 daemon prio=9 os_prio=2 tid=0x0000000019085000 nid=0xf6c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Monitor Ctrl-Break" #6 daemon prio=5 os_prio=0 tid=0x0000000018f20000 nid=0x37dc runnable [0x000000001942e000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	- locked <0x00000000d75c1878> (a java.io.InputStreamReader)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	- locked <0x00000000d75c1878> (a java.io.InputStreamReader)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at com.intellij.rt.execution.application.AppMainV2$1.run(AppMainV2.java:64)
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x00000000179f6000 nid=0x2264 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x00000000179e3000 nid=0x23a4 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x00000000030d9800 nid=0x2e74 in Object.wait() [0x0000000018d2e000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d7308ed8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	- locked <0x00000000d7308ed8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x00000000030d6000 nid=0x35bc in Object.wait() [0x0000000018c2f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d7306c00> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	- locked <0x00000000d7306c00> (a java.lang.ref.Reference$Lock)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+"VM Thread" os_prio=2 tid=0x0000000017997800 nid=0x6ac runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000000002ffc000 nid=0x4228 runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000000002ffd800 nid=0x193c runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000000002fff000 nid=0x42f4 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000000003000800 nid=0x3408 runnable 
+
+"VM Periodic Task Thread" os_prio=2 tid=0x0000000019129000 nid=0x47e0 waiting on condition 
+
+JNI global references: 12
+
+
+Found one Java-level deadlock:
+=============================
+"Thread-1":
+  waiting to lock monitor 0x00000000179bf168 (object 0x00000000d7577bf8, a java.lang.String),
+  which is held by "Thread-0"
+"Thread-0":
+  waiting to lock monitor 0x00000000179c0608 (object 0x00000000d7577c28, a java.lang.String),
+  which is held by "Thread-1"
+
+Java stack information for the threads listed above:
+===================================================
+"Thread-1":
+	at com.antumatch.threadpooldemo.mytestdemo.DeadLockDemo$2.run(DeadLockDemo.java:34)
+	- waiting to lock <0x00000000d7577bf8> (a java.lang.String)
+	- locked <0x00000000d7577c28> (a java.lang.String)
+	at java.lang.Thread.run(Thread.java:748)
+"Thread-0":
+	at com.antumatch.threadpooldemo.mytestdemo.DeadLockDemo$1.run(DeadLockDemo.java:20)
+	- waiting to lock <0x00000000d7577c28> (a java.lang.String)
+	- locked <0x00000000d7577bf8> (a java.lang.String)
+	at java.lang.Thread.run(Thread.java:748)
+
+Found 1 deadlock.
+
